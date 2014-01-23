@@ -1,10 +1,5 @@
-/*******************
-                   *
-      PROTOTYPES   *
-                   *
-********************/
-
-///Chiffres sur la matrice de LED
+#line 1 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
+#line 8 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
 void LED_zero();
 void LED_un();
 void LED_deux();
@@ -16,47 +11,33 @@ void LED_sept();
 void LED_huit();
 void LED_neuf();
 
-void LED_raz(); ///Eteindre toutes les LED
+void LED_raz();
 
-void compte(); ///De 0 à 9
-
-
-/****************
-                *
-  Fonction Main *
-                *
-****************/
-
+void compte();
+#line 30 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
 void main() {
 
 int i = 0;
 
-///Initialisation des LED à l'etat eteint
-    PORTA = 0;
-    PORTB = 0;
-    PORTC = 0;
-    PORTD = 0;
-    PORTE = 0;
-    
-///Ouverture en mode output (je crois)
-    TRISA = 0;
-    TRISB = 0;
-    TRISC = 0;
-    TRISD = 0;
-    
-///Boucle 'infinie' du programme
-          while(1){
-           compte();
-          }
+
+ PORTA = 0;
+ PORTB = 0;
+ PORTC = 0;
+ PORTD = 0;
+ PORTE = 0;
+
+
+ TRISA = 0;
+ TRISB = 0;
+ TRISC = 0;
+ TRISD = 0;
+
+
+ while(1){
+ compte();
+ }
 }
-
-
-/***********************
-                       *
-Fonctions auxiliaires  *
-                       *
-***********************/
-
+#line 60 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
 void LED_zero()
 {
  PORTA = 0xFF;
