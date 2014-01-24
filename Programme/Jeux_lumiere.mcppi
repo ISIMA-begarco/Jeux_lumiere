@@ -33,10 +33,13 @@ Count=0
 [OTHER_FILES]
 Count=0
 [SEARCH_PATH]
-Count=3
-Path0=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\defs\
-Path1=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\
-Path2=C:\Users\Benji\Documents\GitHub\Jeux_lumiere\Programme\
+Count=6
+Path0=C:\Users\Ben\Documents\Mikroelektronika\mikroC PRO for PIC\defs\
+Path1=C:\Users\Ben\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\
+Path2=C:\Users\Ben\Documents\GitHub\Jeux_lumiere\Programme\
+Path3=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\defs\
+Path4=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\
+Path5=C:\Users\Benji\Documents\GitHub\Jeux_lumiere\Programme\
 [HEADER_PATH]
 Count=0
 [HEADERS]

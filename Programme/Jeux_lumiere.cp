@@ -1,5 +1,9 @@
-#line 1 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
-#line 8 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
+#line 1 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
+#pragma config OSC = INTIO67
+#line 17 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
+void LED_init();
+
+
 void LED_zero();
 void LED_un();
 void LED_deux();
@@ -13,12 +17,173 @@ void LED_neuf();
 
 void LED_raz();
 
+void chiffre(int i);
+
 void compte();
-#line 30 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
-void main() {
+void decompte();
+#line 45 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
+void main()
+{
 
-int i = 0;
+ LED_init();
+ OSCCON = 0b01110011;
 
+
+ while(1)
+ {
+ decompte();
+ }
+}
+#line 65 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
+void LED_zero()
+{
+ LATA = 0xFF;
+ LATB = 0b10000001;
+ LATC = 0b10000001;
+ LATD = 0xFF;
+}
+
+void LED_un()
+{
+ LATA = 0b1000;
+ LATB = 0b100;
+ LATC = 0b10;
+ LATD = 0xFF;
+}
+
+void LED_deux()
+{
+ LATA = 0b11111001;
+ LATB = 0b10001001;
+ LATC = 0b10001001;
+ LATD = 0b10001111;
+}
+
+void LED_trois()
+{
+ LATA = 0b10000001;
+ LATB = 0b10001001;
+ LATC = 0b10001001;
+ LATD = 0xFF;
+}
+
+void LED_quatre()
+{
+ LATA = 0b00001111;
+ LATB = 0b00001000;
+ LATC = 0b00001000;
+ LATD = 0xFF;
+}
+
+void LED_cinq()
+{
+ LATA = 0b10001111;
+ LATB = 0b10001001;
+ LATC = 0b10001001;
+ LATD = 0b11111001;
+}
+
+void LED_six()
+{
+ LATA = 0xFF;
+ LATB = 0b10001001;
+ LATC = 0b10001001;
+ LATD = 0b11111001;
+}
+
+void LED_sept()
+{
+ LATA = 0b1;
+ LATB = 0b1;
+ LATC = 0b1;
+ LATD = 0xFF;
+}
+
+void LED_huit()
+{
+ LATA = 0xFF;
+ LATB = 0b10001001;
+ LATC = 0b10001001;
+ LATD = 0xFF;
+}
+
+void LED_neuf()
+{
+ LATA = 0b10001111;
+ LATB = 0b10001001;
+ LATC = 0b10001001;
+ LATD = 0xFF;
+}
+
+void LED_raz()
+{
+ LATA = 0;
+ LATB = 0;
+ LATC = 0;
+ LATD = 0;
+}
+
+void compte()
+{
+ int i = 0;
+ for(i=0; i<10; i++)
+ {
+ chiffre(i);
+  Delay_ms(1000) ;
+ }
+}
+
+void chiffre(int i)
+{
+ switch(i)
+ {
+ case 0:
+ LED_zero();
+ break;
+ case 1:
+ LED_un();
+ break;
+ case 2:
+ LED_deux();
+ break;
+ case 3:
+ LED_trois();
+ break;
+ case 4:
+ LED_quatre();
+ break;
+ case 5:
+ LED_cinq();
+ break;
+ case 6:
+ LED_six();
+ break;
+ case 7:
+ LED_sept();
+ break;
+ case 8:
+ LED_huit();
+ break;
+ case 9:
+ LED_neuf();
+ break;
+ default:
+ LED_raz();
+ }
+}
+
+void decompte()
+{
+ int i = 0;
+ for(i = 9 ; i >= 0 ; i--)
+ {
+ chiffre(i);
+  Delay_ms(1000) ;
+ }
+}
+
+void LED_init()
+{
 
  PORTA = 0;
  PORTB = 0;
@@ -31,136 +196,4 @@ int i = 0;
  TRISB = 0;
  TRISC = 0;
  TRISD = 0;
-
-
- while(1){
- compte();
- }
-}
-#line 60 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
-void LED_zero()
-{
- PORTA = 0xFF;
- PORTB = 0b10000001;
- PORTC = 0b10000001;
- PORTD = 0xFF;
-}
-
-void LED_un()
-{
- PORTA = 0b1000;
- PORTB = 0b100;
- PORTC = 0b10;
- PORTD = 0xFF;
-}
-
-void LED_deux()
-{
- PORTA = 0b11110001;
- PORTB = 0b10010001;
- PORTC = 0b10010001;
- PORTD = 0b10011111;
-}
-
-void LED_trois()
-{
- PORTA = 0b10000001;
- PORTB = 0b10010001;
- PORTC = 0b10010001;
- PORTD = 0xFF;
-}
-
-void LED_quatre()
-{
- PORTA = 0b00011111;
- PORTB = 0b00010000;
- PORTC = 0b00010000;
- PORTD = 0xFF;
-}
-
-void LED_cinq()
-{
- PORTA = 0b10011111;
- PORTB = 0b10010001;
- PORTC = 0b10010001;
- PORTD = 0b11110001;
-}
-
-void LED_six()
-{
- PORTA = 0xFF;
- PORTB = 0b10010001;
- PORTC = 0b10010001;
- PORTD = 0b11110001;
-}
-
-void LED_sept()
-{
- PORTA = 0b1;
- PORTB = 0b1;
- PORTC = 0b1;
- PORTD = 0xFF;
-}
-
-void LED_huit()
-{
- PORTA = 0xFF;
- PORTB = 0b10010001;
- PORTC = 0b10010001;
- PORTD = 0xFF;
-}
-
-void LED_neuf()
-{
- PORTA = 0b10011111;
- PORTB = 0b10010001;
- PORTC = 0b10010001;
- PORTD = 0xFF;
-}
-
-void LED_raz()
-{
- PORTA = 0;
- PORTB = 0;
- PORTC = 0;
- PORTD = 0;
-}
-
-void compte()
-{
-int i = 0;
-for(i=0; i<10; i++)
-{
- LED_zero();
- Delay_ms(1000);
- LED_raz();
- LED_un();
- Delay_ms(1000);
- LED_raz();
- LED_deux();
- Delay_ms(1000);
- LED_raz();
- LED_trois();
- Delay_ms(1000);
- LED_raz();
- LED_quatre();
- Delay_ms(1000);
- LED_raz();
- LED_cinq();
- Delay_ms(1000);
- LED_raz();
- LED_six();
- Delay_ms(1000);
- LED_raz();
- LED_sept();
- Delay_ms(1000);
- LED_raz();
- LED_huit();
- Delay_ms(1000);
- LED_raz();
- LED_neuf();
- Delay_ms(1000);
- LED_raz();
-
-}
 }

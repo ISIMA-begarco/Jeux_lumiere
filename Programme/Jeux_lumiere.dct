@@ -415,6 +415,7 @@ cf_write_sector
 cfgs
 cfgs_bit
 character8x7
+chiffre
 chs0
 chs0_bit
 chs1
@@ -497,6 +498,7 @@ dccpx
 dccpx_bit
 dec2bcd
 dec2bcd16
+decompte
 delay_100ms
 delay_10ms
 delay_10us
@@ -847,6 +849,7 @@ ldiv
 led_cinq
 led_deux
 led_huit
+led_init
 led_neuf
 led_quatre
 led_raz
