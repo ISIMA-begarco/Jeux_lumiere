@@ -622,8 +622,15 @@ giel_bit
 glcd_box
 glcd_circle
 glcd_circle_fill
+glcd_cs1
+glcd_cs1_direction
+glcd_cs2
+glcd_cs2_direction
+glcd_dataport
 glcd_defaultfont
 glcd_dot
+glcd_en
+glcd_en_direction
 glcd_ext_image
 glcd_ext_partialimage
 glcd_fill
@@ -637,6 +644,12 @@ glcd_read_data
 glcd_rectangle
 glcd_rectangle_round_edges
 glcd_rectangle_round_edges_fill
+glcd_rs
+glcd_rs_direction
+glcd_rst
+glcd_rst_direction
+glcd_rw
+glcd_rw_direction
 glcd_set_ext_buffer
 glcd_set_ext_font_adv
 glcd_set_font
@@ -780,6 +793,8 @@ lata5
 lata5_bit
 lata6
 lata6_bit
+lata7
+lata7_bit
 latb
 latb0
 latb0_bit
@@ -1076,6 +1091,7 @@ pr2
 preinc0
 preinc1
 preinc2
+print_logo_isima
 printout
 prod
 prodh
@@ -1160,6 +1176,8 @@ ra5
 ra5_bit
 ra6
 ra6_bit
+ra7
+ra7_bit
 rand
 rb0
 rb0_bit
