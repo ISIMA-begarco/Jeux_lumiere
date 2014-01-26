@@ -108,9 +108,9 @@ File47=TFT_16bit_Defs
 File48=TFT_Defs
 File49=TFT_TouchPanel
 File50=Time
-File51=TouchPanel
-File52=Trigonometry
-File53=UART
+File51=Trigonometry
+File52=UART
+File53=TouchPanel
 [EXPANDED NODES]
 Node1=Sources
 Node2=Header Files

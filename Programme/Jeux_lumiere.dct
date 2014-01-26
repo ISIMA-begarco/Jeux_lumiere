@@ -608,6 +608,7 @@ fsr2h
 fsr2l
 fsr2ptr
 fullbits
+game_of_life
 gcen
 gcen_bit
 get_fosc_khz
@@ -695,6 +696,8 @@ ibf_trise_bit
 ibov_trise_bit
 ics_auto
 ics_off
+image_isima
+image_to_matrix
 imagefileasarray
 imagefileasarray
 indf0
@@ -915,6 +918,7 @@ man_receive_init
 man_send
 man_send_init
 man_synchro
+matrix_to_image
 max
 max_files
 memchr
@@ -1091,7 +1095,7 @@ pr2
 preinc0
 preinc1
 preinc2
-print_logo_isima
+print_glcd
 printout
 prod
 prodh
