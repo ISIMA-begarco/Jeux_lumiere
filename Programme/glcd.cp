@@ -1,5 +1,5 @@
-#line 1 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/glcd.c"
-#line 1 "c:/users/ben/documents/github/jeux_lumiere/programme/glcd.h"
+#line 1 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/glcd.c"
+#line 1 "c:/users/benji/documents/github/jeux_lumiere/programme/glcd.h"
 
 
 
@@ -11,7 +11,7 @@ void game_of_life(unsigned char ** p_monTab);
 void image_to_matrix(const char * entree, unsigned char ** retour);
 void matrix_to_image(unsigned char ** entree, char retour[1024]);
 void print_glcd(unsigned char ** image);
-#line 3 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/glcd.c"
+#line 3 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/glcd.c"
 void image_to_matrix(const char * entree, unsigned char ** retour)
 {
  int i = 0;
@@ -73,7 +73,7 @@ void game_of_life(unsigned char ** p_monTab)
  (p_monTab[e][n]>9 ? 1 : 0) + (p_monTab[o][j]>9 ? 1 : 0) +
  (p_monTab[e][n]>9 ? 1 : 0) + (p_monTab[o][s]>9 ? 1 : 0) +
  (p_monTab[i][s]>9 ? 1 : 0) + (p_monTab[e][s]>9 ? 1 : 0);
-#line 82 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/glcd.c"
+#line 82 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/glcd.c"
  if((p_monTab[i][j] == 12) || (p_monTab[i][j] == 3))
  {
  p_monTab[i][j] = 1;

@@ -6,6 +6,7 @@
 
 #include "chiffre.h"
 #include "glcd.h"
+#include "lcd.h"
 
 /****************
                 *
@@ -43,10 +44,12 @@ const char image_isima[1024] = {
 
 void main()
 {
+ afficher_lcd();
     /// MM_Init();
     /// Boucle 'infinie' du programme
     while(1)
     {
+
        /* unsigned char ** matrice_calcul = (unsigned char**)Malloc(sizeof(unsigned char*)*SCREEN_H);
         int i = 0;
         for(i = 0 ; i < SCREEN_H ; i++)
@@ -56,7 +59,7 @@ void main()
         image_to_matrix(image_isima, matrice_calcul);
                      */
         /// introduction sur LCD
-        Glcd_Init();
+       Glcd_Init();
         Glcd_Image(image_ISIMA);
         Delay_ms(5000);
                 /*

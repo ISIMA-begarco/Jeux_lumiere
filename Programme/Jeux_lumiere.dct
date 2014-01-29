@@ -236,6 +236,7 @@ adon_bit
 adres
 adresh
 adresl
+afficher_lcd
 an0
 an0_bit
 an1
@@ -675,6 +676,7 @@ go_done_bit
 go_not_done
 go_not_done_bit
 halfbits
+i
 i2c_dat
 i2c_dat_bit
 i2c_data
@@ -796,8 +798,6 @@ lata5
 lata5_bit
 lata6
 lata6_bit
-lata7
-lata7_bit
 latb
 latb0
 latb0_bit
@@ -859,9 +859,21 @@ late2_bit
 lcd_chr
 lcd_chr_cp
 lcd_cmd
+lcd_d4
+lcd_d4_direction
+lcd_d5
+lcd_d5_direction
+lcd_d6
+lcd_d6_direction
+lcd_d7
+lcd_d7_direction
+lcd_en
+lcd_en_direction
 lcd_init
 lcd_out
 lcd_out_cp
+lcd_rs
+lcd_rs_direction
 ldexp
 ldiv
 led_cinq
@@ -974,6 +986,7 @@ mmc_read_csd
 mmc_read_sector
 mmc_write_sector
 modf
+move_delay
 mul_16x16_s
 mul_16x16_u
 mul_32x32_fp
@@ -1180,8 +1193,6 @@ ra5
 ra5_bit
 ra6
 ra6_bit
-ra7
-ra7_bit
 rand
 rb0
 rb0_bit
@@ -2153,6 +2164,10 @@ txip
 txip_bit
 txreg
 txsta
+txt1
+txt2
+txt3
+txt4
 ua
 ua_bit
 uart_data_ready

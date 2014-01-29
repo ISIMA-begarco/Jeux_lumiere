@@ -1,6 +1,6 @@
-#line 1 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
-#line 1 "c:/users/ben/documents/github/jeux_lumiere/programme/chiffre.h"
-#line 19 "c:/users/ben/documents/github/jeux_lumiere/programme/chiffre.h"
+#line 1 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
+#line 1 "c:/users/benji/documents/github/jeux_lumiere/programme/chiffre.h"
+#line 19 "c:/users/benji/documents/github/jeux_lumiere/programme/chiffre.h"
 void LED_init();
 
 
@@ -21,7 +21,7 @@ void chiffre(int i);
 
 void compte();
 void decompte();
-#line 1 "c:/users/ben/documents/github/jeux_lumiere/programme/glcd.h"
+#line 1 "c:/users/benji/documents/github/jeux_lumiere/programme/glcd.h"
 
 
 
@@ -33,7 +33,10 @@ void game_of_life(unsigned char ** p_monTab);
 void image_to_matrix(const char * entree, unsigned char ** retour);
 void matrix_to_image(unsigned char ** entree, char retour[1024]);
 void print_glcd(unsigned char ** image);
-#line 17 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
+#line 1 "c:/users/benji/documents/github/jeux_lumiere/programme/lcd.h"
+#line 19 "c:/users/benji/documents/github/jeux_lumiere/programme/lcd.h"
+void afficher_lcd();
+#line 18 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
 char GLCD_DataPort at PORTD;
 
 sbit GLCD_CS1 at RB0_bit;
@@ -63,15 +66,16 @@ const char image_isima[1024] = {
 
 void main()
 {
+ afficher_lcd();
 
 
  while(1)
  {
-#line 59 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
+#line 62 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
  Glcd_Init();
  Glcd_Image(image_ISIMA);
  Delay_ms(5000);
-#line 75 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
+#line 78 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
  LED_init();
 
  decompte();
