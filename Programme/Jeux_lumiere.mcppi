@@ -6,7 +6,7 @@ Value=-1
 [BUILD_TYPE]
 Value=0
 [ACTIVE_TAB]
-Value=lcd.h
+Value=Jeux_lumiere.c
 [USE_EEPROM]
 Value=0
 [USE_HEAP]
@@ -27,14 +27,8 @@ Count=0
 Count=0
 ActiveImageIndex=-1
 [OPENED_FILES]
-Count=7
+Count=1
 File0=Jeux_lumiere.c
-File1=chiffre.c
-File2=chiffre.h
-File3=glcd.c
-File4=glcd.h
-File5=lcd.c
-File6=lcd.h
 [EEPROM]
 Count=0
 [ACTIVE_COMMENTS_FILES]

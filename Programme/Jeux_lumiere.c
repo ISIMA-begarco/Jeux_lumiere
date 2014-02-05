@@ -31,6 +31,22 @@ sbit GLCD_RW_Direction at TRISB3_bit;
 sbit GLCD_EN_Direction at TRISB4_bit;
 sbit GLCD_RST_Direction at TRISB5_bit;
 
+///lcd pinout settings
+sbit LCD_RS at RB4_bit;
+sbit LCD_EN at RB5_bit;
+sbit LCD_D4 at RB0_bit;
+sbit LCD_D5 at RB1_bit;
+sbit LCD_D6 at RB2_bit;
+sbit LCD_D7 at RB3_bit;
+
+sbit LCD_RS_Direction at TRISB4_bit;
+sbit LCD_EN_Direction at TRISB5_bit;
+sbit LCD_D4_Direction at TRISB0_bit;
+sbit LCD_D5_Direction at TRISB1_bit;
+sbit LCD_D6_Direction at TRISB2_bit;
+sbit LCD_D7_Direction at TRISB3_bit;
+
+
 const char image_isima[1024] = {
       0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
       0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
@@ -44,36 +60,39 @@ const char image_isima[1024] = {
 
 void main()
 {
- afficher_lcd();
+     ///afficher_lcd_2(); //test affichage lcd, en cours de test
+
     /// MM_Init();
     /// Boucle 'infinie' du programme
-    while(1)
+    
+
+while(1)
     {
 
-       /* unsigned char ** matrice_calcul = (unsigned char**)Malloc(sizeof(unsigned char*)*SCREEN_H);
-        int i = 0;
-        for(i = 0 ; i < SCREEN_H ; i++)
-        {
-            matrice_calcul[i] = (unsigned char*)malloc(sizeof(unsigned char)*SCREEN_W);
-        }
-        image_to_matrix(image_isima, matrice_calcul);
-                     */
+    //    unsigned char ** matrice_calcul = (unsigned char**)Malloc(sizeof(unsigned char*)*SCREEN_H);
+    //    int i = 0;
+    //    for(i = 0 ; i < SCREEN_H ; i++)
+    //    {
+    //        matrice_calcul[i] = (unsigned char*)malloc(sizeof(unsigned char)*SCREEN_W);
+    //    }
+    //    image_to_matrix(image_isima, matrice_calcul);
+
         /// introduction sur LCD
-       Glcd_Init();
+        Glcd_Init();
         Glcd_Image(image_ISIMA);
         Delay_ms(5000);
-                /*
-        i = 0;
 
-        while(i < 2)
-        {
-             game_of_life(matrice_calcul);
-             Glcd_Fill(0);
-             print_glcd(matrice_calcul);
-             Delay_ms(1000);
-             i++;
-        }
-                */
+    //    i = 0;
+    //
+    //    while(i < 2)
+    //    {
+    //         game_of_life(matrice_calcul);
+    //         Glcd_Fill(0);
+    //         print_glcd(matrice_calcul);
+    //         Delay_ms(1000);
+    //         i++;
+    //    }
+
         /// initialisation pour afficher sur LED
         LED_init();
         /// compte à rebours de 9 à 0

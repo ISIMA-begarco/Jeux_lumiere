@@ -1,23 +1,4 @@
 main
-	afficher_lcd
-		Lcd_Init
-			Delay_5500us
-			Delay_1us
-		Lcd_Cmd
-			Delay_1us
-			Delay_5500us
-			Delay_50us
-		Lcd_Out
-			Lcd_Cmd
-				Delay_1us
-				Delay_5500us
-				Delay_50us
-			Lcd_Chr_CP
-				Lcd_Cmd
-					Delay_1us
-					Delay_5500us
-					Delay_50us
-		Move_Delay
 	Glcd_Init
 		Strobe
 			Delay_10us

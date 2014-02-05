@@ -237,6 +237,7 @@ adres
 adresh
 adresl
 afficher_lcd
+afficher_lcd_2
 an0
 an0_bit
 an1
@@ -1843,6 +1844,7 @@ tblptru3
 tblptru3_bit
 tblptru4
 tblptru4_bit
+text
 tft_16bit_circle
 tft_16bit_color16bittorgb
 tft_16bit_defaultfont

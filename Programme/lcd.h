@@ -17,5 +17,6 @@
 
 ///fonction d'affichage
 void afficher_lcd();
+void afficher_lcd_2();
 
 #endif /// LCD_H_INCLUDED

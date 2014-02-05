@@ -36,6 +36,7 @@ void print_glcd(unsigned char ** image);
 #line 1 "c:/users/benji/documents/github/jeux_lumiere/programme/lcd.h"
 #line 19 "c:/users/benji/documents/github/jeux_lumiere/programme/lcd.h"
 void afficher_lcd();
+void afficher_lcd_2();
 #line 18 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
 char GLCD_DataPort at PORTD;
 
@@ -53,6 +54,22 @@ sbit GLCD_RW_Direction at TRISB3_bit;
 sbit GLCD_EN_Direction at TRISB4_bit;
 sbit GLCD_RST_Direction at TRISB5_bit;
 
+
+sbit LCD_RS at RB4_bit;
+sbit LCD_EN at RB5_bit;
+sbit LCD_D4 at RB0_bit;
+sbit LCD_D5 at RB1_bit;
+sbit LCD_D6 at RB2_bit;
+sbit LCD_D7 at RB3_bit;
+
+sbit LCD_RS_Direction at TRISB4_bit;
+sbit LCD_EN_Direction at TRISB5_bit;
+sbit LCD_D4_Direction at TRISB0_bit;
+sbit LCD_D5_Direction at TRISB1_bit;
+sbit LCD_D6_Direction at TRISB2_bit;
+sbit LCD_D7_Direction at TRISB3_bit;
+
+
 const char image_isima[1024] = {
  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -66,16 +83,28 @@ const char image_isima[1024] = {
 
 void main()
 {
- afficher_lcd();
 
 
- while(1)
+
+
+
+
+while(1)
  {
-#line 62 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
+
+
+
+
+
+
+
+
+
+
  Glcd_Init();
  Glcd_Image(image_ISIMA);
  Delay_ms(5000);
-#line 78 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
+#line 97 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
  LED_init();
 
  decompte();
