@@ -27,3 +27,16 @@ main
 			LED_huit
 			LED_neuf
 			LED_raz
+	initRGB
+		PWM1_Init
+		PWM2_Init
+	fondue
+		initRGB
+			PWM1_Init
+			PWM2_Init
+		PWM1_Start
+		PWM2_Start
+		PWM1_Set_Duty
+			Mul_16x16_U
+		PWM2_Set_Duty
+			Mul_16x16_U

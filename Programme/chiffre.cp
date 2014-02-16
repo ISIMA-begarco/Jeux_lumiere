@@ -1,6 +1,6 @@
-#line 1 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/chiffre.c"
-#line 1 "c:/users/benji/documents/github/jeux_lumiere/programme/chiffre.h"
-#line 19 "c:/users/benji/documents/github/jeux_lumiere/programme/chiffre.h"
+#line 1 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/chiffre.c"
+#line 1 "c:/users/ben/documents/github/jeux_lumiere/programme/chiffre.h"
+#line 19 "c:/users/ben/documents/github/jeux_lumiere/programme/chiffre.h"
 void LED_init();
 
 
@@ -21,7 +21,7 @@ void chiffre(int i);
 
 void compte();
 void decompte();
-#line 9 "C:/Users/Benji/Documents/GitHub/Jeux_lumiere/Programme/chiffre.c"
+#line 9 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/chiffre.c"
 void LED_zero()
 {
  LATA = 0xFF;
