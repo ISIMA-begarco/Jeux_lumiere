@@ -720,6 +720,7 @@ imagefileasarray
 indf0
 indf1
 indf2
+initpseudopwm
 initrgb
 int0
 int0_bit
@@ -1147,6 +1148,7 @@ ps2_config
 ps2_key_read
 psa
 psa_bit
+pseudopwm
 psp0
 psp0_bit
 psp1

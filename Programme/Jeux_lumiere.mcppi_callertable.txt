@@ -1,32 +1,5 @@
 main
-	Glcd_Init
-		Strobe
-			Delay_10us
-	Glcd_Image
-		Glcd_Set_Side
-		Glcd_Set_Page
-			Strobe
-				Delay_10us
-		Glcd_Set_X
-			Strobe
-				Delay_10us
-		Glcd_Write_Data
-			Strobe
-				Delay_10us
-	LED_init
-	decompte
-		chiffre
-			LED_zero
-			LED_un
-			LED_deux
-			LED_trois
-			LED_quatre
-			LED_cinq
-			LED_six
-			LED_sept
-			LED_huit
-			LED_neuf
-			LED_raz
+	initPseudoPWM
 	initRGB
 		PWM1_Init
 		PWM2_Init
@@ -40,3 +13,4 @@ main
 			Mul_16x16_U
 		PWM2_Set_Duty
 			Mul_16x16_U
+	pseudoPWM

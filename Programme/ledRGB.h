@@ -8,6 +8,8 @@
 ********************/
 
 void initRGB();
+void initPseudoPWM();
 void fondue();
+void pseudoPWM(int n);
 
 #endif /// LEDRGB_H_INCLUDED

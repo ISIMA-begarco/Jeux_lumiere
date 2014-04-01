@@ -12,9 +12,31 @@ void initRGB()
   PWM2_Init(5000);                    // Initialize PWM2 module at 5KHz
 }
 
+void initPseudoPWM()
+{
+     PORTD = 0;
+     TRISD = 0;
+}
+
+void pseudoPWM(int n)
+{
+     int i = 0;
+     
+     LATD = 255;
+     for(i = 0 ; i < n ; i++)
+     {
+          delay_us(1);
+     }
+     LATD = 0;
+     
+     for(i = n ; i < 200 ; i++)
+     {
+           delay_us(1);
+     }
+}
+
 void fondue()
 {
-  
   unsigned short current_duty1, old_duty1, current_duty2, old_duty2;
   int croissance;
 

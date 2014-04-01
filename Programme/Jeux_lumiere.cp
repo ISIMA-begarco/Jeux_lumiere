@@ -63,7 +63,9 @@ void afficher_lcd_2();
 #line 1 "c:/users/ben/documents/github/jeux_lumiere/programme/ledrgb.h"
 #line 10 "c:/users/ben/documents/github/jeux_lumiere/programme/ledrgb.h"
 void initRGB();
+void initPseudoPWM();
 void fondue();
+void pseudoPWM(int n);
 #line 18 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
 const char image_isima[1024] = {
  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -78,25 +80,26 @@ const char image_isima[1024] = {
 
 void main()
 {
-
-
-
-
+ int n = 1;
+ initPseudoPWM();
 
 
  while(1)
+#line 47 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
  {
-#line 50 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
- Glcd_Init();
- Glcd_Image(image_ISIMA);
- Delay_ms(5000);
-#line 68 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
- LED_init();
-
- decompte();
- LED_init();
-
  initRGB();
  fondue();
+
+ for(n = 0 ; n<200 ; n++)
+ {
+ pseudoPWM(n);
+ }
+
+ for(n = 200 ; n>0 ; n--)
+ {
+ pseudoPWM(n);
+ }
+
+
  }
 }

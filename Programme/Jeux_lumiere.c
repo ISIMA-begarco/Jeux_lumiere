@@ -28,49 +28,36 @@ const char image_isima[1024] = {
 
 void main()
 {
-     ///afficher_lcd_2(); //test affichage lcd, en cours de test
-    /// MM_Init();
-    
-    
-    
+     int n = 1;
+     initPseudoPWM();
     /// Boucle 'infinie' du programme
+    
     while(1)
-    {
-/********************************************************************************************************
-    //    unsigned char ** matrice_calcul = (unsigned char**)Malloc(sizeof(unsigned char*)*SCREEN_H);   *
-    //    int i = 0;                                                                                    *
-    //    for(i = 0 ; i < SCREEN_H ; i++)                                                               *
-    //    {                                                                                             *
-    //        matrice_calcul[i] = (unsigned char*)malloc(sizeof(unsigned char)*SCREEN_W);               *
-    //    }                                                                                             *
-    //    image_to_matrix(image_isima, matrice_calcul);                                                 *
-*********************************************************************************************************/
-        
+    {  /*
         /// introduction sur LCD
         Glcd_Init();
         Glcd_Image(image_ISIMA);
         Delay_ms(5000);
-        
-/********************************************************
-        i = 0;                                          *
-                                                        *
-        while(i < 2)                                    *
-        {                                               *
-             game_of_life(matrice_calcul);              *
-             Glcd_Fill(0);                              *
-             print_glcd(matrice_calcul);                *
-             Delay_ms(1000);                            *
-             i++;                                       *
-        }                                               *
-*********************************************************/
 
         /// initialisation pour afficher sur LED
         LED_init();
         /// compte à rebours de 9 à 0
         decompte();
         LED_init();
-        
+                        */
         initRGB();
         fondue();
+
+        for(n = 0 ; n<200 ; n++)
+        {
+              pseudoPWM(n);
+        }
+        
+        for(n = 200 ; n>0 ; n--)
+        {
+              pseudoPWM(n);
+        }
+        //n++;
+        //if(n>=200){n=1;}
     }
 }
