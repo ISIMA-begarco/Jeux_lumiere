@@ -7,9 +7,9 @@
                    *
 ********************/
 
-void initRGB();
+void initPWM();
 void initPseudoPWM();
 void fondue();
-void pseudoPWM(int n);
+void PWMD_Set_Duty(int pins, int n);
 
 #endif /// LEDRGB_H_INCLUDED

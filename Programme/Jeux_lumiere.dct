@@ -721,7 +721,7 @@ indf0
 indf1
 indf2
 initpseudopwm
-initrgb
+initpwm
 int0
 int0_bit
 int0e
@@ -1026,6 +1026,7 @@ mul_32x32_u
 mul_8x8_s
 n
 n_bit
+nbetapes
 not_a
 not_a_bit
 not_address
@@ -1148,7 +1149,6 @@ ps2_config
 ps2_key_read
 psa
 psa_bit
-pseudopwm
 psp0
 psp0_bit
 psp1
@@ -1184,6 +1184,7 @@ pwm2_init
 pwm2_set_duty
 pwm2_start
 pwm2_stop
+pwmd_set_duty
 r
 r_bit
 r_not_w

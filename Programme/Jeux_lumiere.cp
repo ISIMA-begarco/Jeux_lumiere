@@ -62,10 +62,10 @@ void afficher_lcd();
 void afficher_lcd_2();
 #line 1 "c:/users/ben/documents/github/jeux_lumiere/programme/ledrgb.h"
 #line 10 "c:/users/ben/documents/github/jeux_lumiere/programme/ledrgb.h"
-void initRGB();
+void initPWM();
 void initPseudoPWM();
 void fondue();
-void pseudoPWM(int n);
+void PWMD_Set_Duty(int pins, int n);
 #line 18 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
 const char image_isima[1024] = {
  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -78,28 +78,149 @@ const char image_isima[1024] = {
  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
  };
 
+int nbEtapes = 10;
+
 void main()
 {
+
  int n = 1;
- initPseudoPWM();
+ int ports = 1;
+ int delay = 2;
+
+ bit oldstate0;
+ bit oldstate1;
+ bit oldstate2;
+ bit oldstate3;
+ bit oldstate4;
+ bit oldstate5;
+ bit oldstate6;
+ bit oldstate7;
+ int menu = 0;
+ ADCON0 = 0;
+ ADCON1 = 0;
+ TRISB0_bit = 1;
+ TRISE1_bit = 1;
+ TRISB2_bit = 1;
+ TRISB3_bit = 1;
+
+ oldstate0 = 0;
+ oldstate1 = 0;
+ oldstate2 = 0;
+ oldstate3 = 0;
 
 
  while(1)
-#line 47 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
  {
- initRGB();
+
+ if (Button(&PORTB, 0, 1, 1))
+ {
+ oldstate0 = 1;
+ }
+ if (oldstate0 && Button(&PORTB, 0, 1, 0))
+ {
+ oldstate0 = 0;
+ menu = 4;
+ menu %= nbEtapes;
+ }
+
+ if (Button(&PORTB, 1, 1, 1))
+ {
+ oldstate1 = 1;
+ }
+ if (oldstate1 && Button(&PORTB, 1, 1, 0))
+ {
+ oldstate1 = 0;
+ menu = 6;
+ menu %= nbEtapes;
+ }
+
+ if (Button(&PORTB, 2, 1, 1))
+ {
+ oldstate2 = 1;
+ }
+ if (oldstate2 && Button(&PORTB, 2, 1, 0))
+ {
+ oldstate2 = 0;
+ menu = 8;
+ menu %= nbEtapes;
+ }
+
+ if (Button(&PORTB, 3, 1, 1))
+ {
+ oldstate3 = 1;
+ }
+ if (oldstate3 && Button(&PORTB, 3, 1, 0))
+ {
+ oldstate3 = 0;
+ menu = 1;
+ menu %= nbEtapes;
+ }
+
+ if(menu==1)
+ {
+ n = 1;
+ ports = 1;
+ delay = 2;
+
+ initPWM();
+ initPseudoPWM();
+ menu++;
+ menu %= nbEtapes;
+ }
+ else if(menu==2)
+ {
+ PWM2_Set_Duty(0);
+ for(n = 0 ; n<200*delay ; n++)
+ {
+ PWM1_Set_Duty(n/delay);
+ PWMD_Set_Duty(ports,n/delay);
+ }
+
+ PWM1_Set_Duty(0);
+ for(n = 200*delay ; n > 0 ; n--)
+ {
+ PWM2_Set_Duty(n/delay);
+ PWMD_Set_Duty(ports,n/delay);
+ }
+ ports = ports*2 + 1;
+ ports = (ports>0xFF)?1:ports;
+ }
+ else if(menu==3)
+ {
+ PWM1_Stop();
+ PWM2_Stop();
+ menu++;
+ menu %= nbEtapes;
+ }
+ else if(menu==4)
+ {
+ Glcd_Init();
+ menu++;
+ menu %= nbEtapes;
+ }
+ else if(menu==5)
+ {
+ Glcd_Image(image_ISIMA);
+ }
+ else if(menu==6)
+ {
+ LED_init();
+ menu++;
+ menu %= nbEtapes;
+ }
+ else if(menu==7)
+ {
+ decompte();
+ }
+ else if(menu==8)
+ {
+ initPWM();
+ menu++;
+ menu %= nbEtapes;
+ }
+ else if(menu==9)
+ {
  fondue();
-
- for(n = 0 ; n<200 ; n++)
- {
- pseudoPWM(n);
  }
-
- for(n = 200 ; n>0 ; n--)
- {
- pseudoPWM(n);
- }
-
-
  }
 }

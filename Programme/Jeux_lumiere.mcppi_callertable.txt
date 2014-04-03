@@ -1,16 +1,58 @@
 main
-	initPseudoPWM
-	initRGB
+	__CC2DW
+	Button
+		Delay_500us
+	Div_16x16_S
+		Div_16x16_S_L
+	initPWM
 		PWM1_Init
 		PWM2_Init
-	fondue
-		initRGB
-			PWM1_Init
-			PWM2_Init
 		PWM1_Start
 		PWM2_Start
+	initPseudoPWM
+	PWM2_Set_Duty
+		Mul_16x16_U
+	Mul_16x16_U
+	PWM1_Set_Duty
+		Mul_16x16_U
+	PWMD_Set_Duty
+	PWM1_Stop
+	PWM2_Stop
+	Glcd_Init
+		Strobe
+			Delay_10us
+	Glcd_Image
+		Glcd_Set_Side
+		Glcd_Set_Page
+			Strobe
+				Delay_10us
+		Glcd_Set_X
+			Strobe
+				Delay_10us
+		Glcd_Write_Data
+			Strobe
+				Delay_10us
+	LED_init
+	decompte
+		chiffre
+			LED_zero
+			LED_un
+			LED_deux
+			LED_trois
+			LED_quatre
+			LED_cinq
+			LED_six
+			LED_sept
+			LED_huit
+			LED_neuf
+			LED_raz
+	fondue
+		initPWM
+			PWM1_Init
+			PWM2_Init
+			PWM1_Start
+			PWM2_Start
 		PWM1_Set_Duty
 			Mul_16x16_U
 		PWM2_Set_Duty
 			Mul_16x16_U
-	pseudoPWM
