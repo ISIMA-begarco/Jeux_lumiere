@@ -1,4 +1,4 @@
-#line 1 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
+#line 1 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/main.c"
 #line 1 "c:/users/ben/documents/github/jeux_lumiere/programme/chiffre.h"
 #line 19 "c:/users/ben/documents/github/jeux_lumiere/programme/chiffre.h"
 void LED_init();
@@ -15,14 +15,19 @@ void LED_sept();
 void LED_huit();
 void LED_neuf();
 
+
 void LED_raz();
+
 
 void chiffre(int i);
 
+
 void compte();
+
+
 void decompte();
 #line 1 "c:/users/ben/documents/github/jeux_lumiere/programme/glcd.h"
-#line 20 "c:/users/ben/documents/github/jeux_lumiere/programme/glcd.h"
+#line 11 "c:/users/ben/documents/github/jeux_lumiere/programme/glcd.h"
 char GLCD_DataPort at PORTD;
 sbit GLCD_CS1 at RB0_bit;
 sbit GLCD_CS2 at RB1_bit;
@@ -36,37 +41,7 @@ sbit GLCD_RS_Direction at TRISB2_bit;
 sbit GLCD_RW_Direction at TRISB3_bit;
 sbit GLCD_EN_Direction at TRISB4_bit;
 sbit GLCD_RST_Direction at TRISB5_bit;
-#line 40 "c:/users/ben/documents/github/jeux_lumiere/programme/glcd.h"
-void game_of_life(unsigned char ** p_monTab);
-
-void image_to_matrix(const char * entree, unsigned char ** retour);
-void matrix_to_image(unsigned char ** entree, char retour[1024]);
-void print_glcd(unsigned char ** image);
-#line 1 "c:/users/ben/documents/github/jeux_lumiere/programme/lcd.h"
-#line 13 "c:/users/ben/documents/github/jeux_lumiere/programme/lcd.h"
-sbit LCD_RS at RB4_bit;
-sbit LCD_EN at RB5_bit;
-sbit LCD_D4 at RB0_bit;
-sbit LCD_D5 at RB1_bit;
-sbit LCD_D6 at RB2_bit;
-sbit LCD_D7 at RB3_bit;
-#line 26 "c:/users/ben/documents/github/jeux_lumiere/programme/lcd.h"
-sbit LCD_RS_Direction at TRISB4_bit;
-sbit LCD_EN_Direction at TRISB5_bit;
-sbit LCD_D4_Direction at TRISB0_bit;
-sbit LCD_D5_Direction at TRISB1_bit;
-sbit LCD_D6_Direction at TRISB2_bit;
-sbit LCD_D7_Direction at TRISB3_bit;
-#line 40 "c:/users/ben/documents/github/jeux_lumiere/programme/lcd.h"
-void afficher_lcd();
-void afficher_lcd_2();
-#line 1 "c:/users/ben/documents/github/jeux_lumiere/programme/ledrgb.h"
-#line 10 "c:/users/ben/documents/github/jeux_lumiere/programme/ledrgb.h"
-void initPWM();
-void initPseudoPWM();
-void fondue();
-void PWMD_Set_Duty(int pins, int n);
-#line 18 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/Jeux_lumiere.c"
+#line 31 "c:/users/ben/documents/github/jeux_lumiere/programme/glcd.h"
 const char image_isima[1024] = {
  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -77,24 +52,30 @@ const char image_isima[1024] = {
  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
  };
+#line 1 "c:/users/ben/documents/github/jeux_lumiere/programme/ledrgb.h"
+#line 11 "c:/users/ben/documents/github/jeux_lumiere/programme/ledrgb.h"
+void initPWM();
 
-int nbEtapes = 10;
+void initPseudoPWM();
 
+void fondu();
+
+
+
+void PWMD_Set_Duty(int pins, int n);
+#line 17 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/main.c"
 void main()
 {
 
  int n = 1;
  int ports = 1;
  int delay = 2;
+ int nbEtapes = 10;
 
  bit oldstate0;
  bit oldstate1;
  bit oldstate2;
  bit oldstate3;
- bit oldstate4;
- bit oldstate5;
- bit oldstate6;
- bit oldstate7;
  int menu = 0;
  ADCON0 = 0;
  ADCON1 = 0;
@@ -220,7 +201,7 @@ void main()
  }
  else if(menu==9)
  {
- fondue();
+ fondu();
  }
  }
 }

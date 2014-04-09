@@ -1,9 +1,14 @@
 #line 1 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/ledRGB.c"
 #line 1 "c:/users/ben/documents/github/jeux_lumiere/programme/ledrgb.h"
-#line 10 "c:/users/ben/documents/github/jeux_lumiere/programme/ledrgb.h"
+#line 11 "c:/users/ben/documents/github/jeux_lumiere/programme/ledrgb.h"
 void initPWM();
+
 void initPseudoPWM();
-void fondue();
+
+void fondu();
+
+
+
 void PWMD_Set_Duty(int pins, int n);
 #line 3 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/ledRGB.c"
 void initPWM()
@@ -43,7 +48,7 @@ void PWMD_Set_Duty(int pins, int n)
  }
 }
 
-void fondue()
+void fondu()
 {
  unsigned short current_duty1, old_duty1, current_duty2, old_duty2;
  int croissance;

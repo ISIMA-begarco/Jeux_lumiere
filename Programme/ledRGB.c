@@ -3,13 +3,13 @@
 void initPWM()
 {
   PORTA = 255;
-  TRISA = 255;                        // configure PORTA pins as input
-  PORTB = 0;                          // set PORTB to 0
-  TRISB = 0;                          // designate PORTB pins as output
-  PORTC = 0;                          // set PORTC to 0
-  TRISC = 0;                          // designate PORTC pins as output
-  PWM1_Init(5000);                    // Initialize PWM1 module at 5KHz
-  PWM2_Init(5000);                    // Initialize PWM2 module at 5KHz
+  TRISA = 255;                        // configure PORTA en entree
+  PORTB = 0;                          // met PORTB a 0
+  TRISB = 0;                          // configure PORTB en sortie
+  PORTC = 0;                          // met PORTC a 0
+  TRISC = 0;                          // configure PORTC en sortie
+  PWM1_Init(5000);                    // Initialise PWM1 a 5KHz
+  PWM2_Init(5000);                    // Initialise PWM2 a 5KHz
   PWM1_Start();
   PWM2_Start();
 }
@@ -37,7 +37,7 @@ void PWMD_Set_Duty(int pins, int n)       // permet de configurer du pseudo pwm 
      }
 }
 
-void fondue()
+void fondu()
 {
   unsigned short current_duty1, old_duty1, current_duty2, old_duty2;
   int croissance;

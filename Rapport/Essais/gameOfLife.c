@@ -1,4 +1,4 @@
-#include "glcd.h"
+#include "gameOfLife.h"
 
 void image_to_matrix(const char * entree, unsigned char ** retour)
 {

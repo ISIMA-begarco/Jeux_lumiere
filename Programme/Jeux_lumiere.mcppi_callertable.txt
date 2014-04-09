@@ -1,5 +1,4 @@
 main
-	__CC2DW
 	Button
 		Delay_500us
 	Div_16x16_S
@@ -46,7 +45,7 @@ main
 			LED_huit
 			LED_neuf
 			LED_raz
-	fondue
+	fondu
 		initPWM
 			PWM1_Init
 			PWM2_Init

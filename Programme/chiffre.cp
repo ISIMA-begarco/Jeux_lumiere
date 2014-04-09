@@ -15,11 +15,16 @@ void LED_sept();
 void LED_huit();
 void LED_neuf();
 
+
 void LED_raz();
+
 
 void chiffre(int i);
 
+
 void compte();
+
+
 void decompte();
 #line 9 "C:/Users/Ben/Documents/GitHub/Jeux_lumiere/Programme/chiffre.c"
 void LED_zero()

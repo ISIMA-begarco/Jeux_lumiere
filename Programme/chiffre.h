@@ -7,7 +7,7 @@
                    *
 ********************/
 
-#define WAIT       Delay_ms(1000)           /// faire une pause de 1s
+#define WAIT       Delay_ms(1000)           // faire une pause de 1s
 
 /*******************
                    *
@@ -15,10 +15,10 @@
                    *
 ********************/
 
-/// initialisation
+// initialisation
 void LED_init();
 
-/// Chiffres sur la matrice de LED
+// Chiffres sur la matrice de LED
 void LED_zero();
 void LED_un();
 void LED_deux();
@@ -30,11 +30,16 @@ void LED_sept();
 void LED_huit();
 void LED_neuf();
 
-void LED_raz(); /// Eteindre toutes les LED
+// Eteindre toutes les LED
+void LED_raz();
 
-void chiffre(int i); /// Permet d'afficher un chiffre
+// Permet d'afficher un chiffre
+void chiffre(int i);
 
-void compte(); /// De 0 à 9
-void decompte(); /// De 9 à 0
+// De 0 à 9
+void compte();
 
-#endif /// CHIFFRE_H_INCLUDED
+// De 9 à 0
+void decompte();
+
+#endif // CHIFFRE_H_INCLUDED
