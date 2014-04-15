@@ -18,8 +18,6 @@
 
 // convertit les images standart en image pour nous
 void image_to_matrix(const char * entree, unsigned char ** retour);
-// imprime nos images
-void print_glcd(unsigned char ** image);
 // effectue une étape du célèbre jeu de la vie
 void game_of_life(unsigned char ** p_monTab);
 // inversement
